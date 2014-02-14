@@ -31,22 +31,19 @@
 <div class="row" id="SectionTables">
 	<div class="col-md-3 space">
 		<div class="tables">
-				<div class="header premium"><h2><strong>Premium</strong></h2></div>
+				<div class="header Premium"><h2><strong>Premium</strong></h2></div>
 				<div class="bodyTable">
 						<?php $a=1; ?>
 						@foreach ($Products as $Product)
 									<section class="products">								
-										<h4>
-										<input type="checkbox" checked id="id<?php echo $a;?>">
+										<h4><input type="checkbox" checked id="id<?php echo $a;?>" name="Premium" value="{{{ $Product->Cost }}}">
 										{{{ $Product->ProductName }}}-- ${{{ $Product->Cost }}}</h4>
 										<h5>{{{ $Product->DisplayName }}}</h5>
-										<ul id="sortable">
 										  @foreach ($Datas as $data)
 										  	@if ($data->ProductId == $a)
 											    <li>{{{ $data->BulletPoint}}}</li>
 											@endif							  	
 										  @endforeach									  
-										</ul>
 										<?php $a++; ?> 	
 										<?php 
 											if ($a==6) {
@@ -57,7 +54,7 @@
 						@endforeach
 				</div>				
 				<div class="footerTable">
-					<h2><strong>Cost Per Day: $1.66</strong></h2>
+					<h2><strong>Cost Per Day: $<label id="totalPremium">1.66</label></strong></h2>
 					<h5><strong>Additional Payment: $50.23</strong></h5>
 					<h5><strong>Monthly Payment: $50.23</strong></h5>
 				</div>
@@ -65,22 +62,20 @@
 	</div>
 	<div class="col-md-3 space">
 		<div class="tables">
-				<div class="header preferred"><h2><strong>Preferred</strong></h2></div>
+				<div class="header Preferred"><h2><strong>Preferred</strong></h2></div>
 				<div class="bodyTable">
 						<?php $a=1; ?>
 						@foreach ($Products as $Product)
 									<section class="products">	
 										<h4>
-										<input type="checkbox" checked>
-										{{{ $Product->ProductName }}}</h4>
+										<input type="checkbox" value="{{{ $Product->Cost }}}" name="Preferred" checked>
+										{{{ $Product->ProductName }}}-- ${{{ $Product->Cost }}}</h4>
 										<h5>{{{ $Product->DisplayName }}}</h5>
-										<ul id="sortable">
-										  @foreach ($Datas as $data)
+										 @foreach ($Datas as $data)
 										  	@if ($data->ProductId == $a)
 											    <li>{{{ $data->BulletPoint}}}</li>
 											@endif							  	
 										  @endforeach									  
-										</ul>
 										<?php $a++; ?> 	
 										<?php 
 											if ($a==5) {
@@ -91,7 +86,7 @@
 						@endforeach
 				</div>		
 				<div class="footerTable">
-					<h2><strong>Cost Per Day: $1.66</strong></h2>
+					<h2><strong>Cost Per Day: $<label id="totalPreferred">1.66</label></strong></h2>
 					<h5><strong>Additional Payment: $50.23</strong></h5>
 					<h5><strong>Monthly Payment: $50.23</strong></h5>
 				</div>
@@ -99,22 +94,20 @@
 	</div>
 	<div class="col-md-3 space">
 		<div class="tables">
-				<div class="header economy"><h2><strong>Economy</strong></h2></div>
+				<div class="header Economy"><h2><strong>Economy</strong></h2></div>
 				<div class="bodyTable">
 						<?php $a=1; ?>
 						@foreach ($Products as $Product)
 									<section class="products">	
 										<h4>
-										<input type="checkbox" checked>
-										{{{ $Product->ProductName }}}</h4>
+										<input type="checkbox" value="{{{ $Product->Cost }}}" name="Economy" checked>
+										{{{ $Product->ProductName }}}-- ${{{ $Product->Cost }}}</h4>
 										<h5>{{{ $Product->DisplayName }}}</h5>
-										<ul id="sortable">
-										  @foreach ($Datas as $data)
+										@foreach ($Datas as $data)
 										  	@if ($data->ProductId == $a)
 											    <li>{{{ $data->BulletPoint}}}</li>
 											@endif							  	
 										  @endforeach									  
-										</ul>
 										<?php $a++; ?> 	
 										<?php 
 											if ($a==4) {
@@ -125,7 +118,7 @@
 						@endforeach
 				</div>		
 				<div class="footerTable" style="opacity:1;">
-					<h2><strong>Cost Per Day: $1.66</strong></h2>
+					<h2><strong>Cost Per Day: $<label id="totalEconomy">1.66</label></strong></h2>
 					<h5><strong>Additional Payment: $50.23</strong></h5>
 					<h5><strong>Monthly Payment: $50.23</strong></h5>
 				</div>
@@ -133,22 +126,20 @@
 	</div>
 	<div class="col-md-3 space">
 		<div class="tables" height="100%">
-				<div class="header basic"><h2><strong>Basic</strong></h2></div>
+				<div class="header Basic"><h2><strong>Basic</strong></h2></div>
 				<div class="bodyTable">
 					<?php $a=1; ?>
 					@foreach ($Products as $Product)
 								<section class="products">	
 									<h4>
-									<input type="checkbox" checked>
-									{{{ $Product->ProductName }}}</h4>
+									<input type="checkbox" value="{{{ $Product->Cost }}}" name="Basic" checked>
+									{{{ $Product->ProductName }}}-- ${{{ $Product->Cost }}}</h4>
 									<h5>{{{ $Product->DisplayName }}}</h5>
-									<ul id="sortable">
-									  @foreach ($Datas as $data)
+									@foreach ($Datas as $data)
 									  	@if ($data->ProductId == $a)
 										    <li>{{{ $data->BulletPoint}}}</li>
 										@endif							  	
 									  @endforeach									  
-									</ul>
 									<?php $a++; ?> 	
 									<?php 
 										if ($a==3) {
@@ -159,7 +150,7 @@
 					@endforeach
 				</div>		
 				<div class="footerTable">
-					<h2><strong>Cost Per Day: $1.66</strong></h2>
+					<h2><strong>Cost Per Day: $<label id="totalBasic">1.66</label></strong></h2>
 					<h5><strong>Additional Payment: $50.23</strong></h5>
 					<h5><strong>Monthly Payment: $50.23</strong></h5>
 				</div>

@@ -73,16 +73,14 @@ return array(
 			'prefix'   => '',
 			'schema'   => 'public',
 		),
-
-		'sqlsrv' => array(
-			'driver'   => 'sqlsrv',
-			'host'     => 'OTONIEL-PC',
-			'database' => 'phpmenu',	
-			'username' => 'sa',
-			'password' => 'carlos@123',
-			'prefix'   => '',
-		),
-
+                'sqlsrv' => array(
+                        'driver'   => 'sqlsrv',
+                        'host'     => 'dev.digital-officespace.com,5002',
+                        'database' => 'Development',
+                        'username' => 'developer',
+                        'password' => 'P@55w0rd123',
+                        'prefix'   => '',
+                ),
 	),
 
 	/*

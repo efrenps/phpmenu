@@ -12,9 +12,7 @@
         {{ HTML::script('assets/js/html5shiv.js') }}
         {{ HTML::script('assets/js/respond.min.js') }}
     <![endif]-->
-    {{ HTML::style('packages/kendoUI/styles/kendo.common.min.css'); }}
-    {{ HTML::style('packages/kendoUI/styles/kendo.default.min.css'); }}
-    {{ HTML::style('packages/kendoUI/styles/kendo.bootstrap.min.css'); }}
+    
     
 </head>
 <body>
@@ -27,11 +25,7 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     {{-- Include all compiled plugins (below), or include individual files as needed --}}
     {{ HTML::script('packages/bootstrap/js/bootstrap.min.js') }}
-    {{ HTML::script('js/jquery-ui-1.10.4.custom.min.js') }}    
-    
-{{ HTML::script('packages/kendoUI/js/jquery.min.js'); }}
-{{ HTML::script('packages/kendoUI/js/kendo.all.min.js'); }}
-{{ HTML::script('js/app.js'); }}    
+    {{ HTML::script('js/app.js'); }}    
 
 </body>
 </html>
